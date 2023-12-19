@@ -14,7 +14,7 @@ SRC = libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.
 	libft/ft_lstlast_bonus.c libft/ft_lstadd_back_bonus.c libft/ft_lstdelone_bonus.c \
 	libft/ft_lstclear_bonus.c libft/ft_lstiter_bonus.c libft/ft_lstmap_bonus.c \
 	ft_printf.c tipe_finder.c putchar_c.c putstr_c.c putnbr_c.c puthexa_min_c.c \
-	puthexa_may_c.c ft_putunsint_c.c putptrc_c.c
+	puthexa_may_c.c putunsint_c.c putptr_c.c
 
 OBJ = $(SRC:.c=.o)
 

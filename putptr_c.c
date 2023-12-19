@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:00:54 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/18 18:43:14 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:04:42 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ static int	write_ptr(unsigned long ptr, int count, char *s)
 	else
 		count++;
 	c = (ptr % 16);
-	write (1, &s[c], 1);
+	if (write (1, &s[c], 1) < 0)
+		return (-1);
 	return (count);
 }
 
@@ -31,8 +32,9 @@ int	putptr_c(unsigned long ptr)
 	int		count;
 
 	count = 2;
-	write (1, "0x", 2);
-	s = "0123456789abcdf";
+	if (write (1, "0x", 2) < 0)
+		return (-1);
+	s = "0123456789abcdef";
 	count = write_ptr(ptr, count, s);
 	return (count);
 }

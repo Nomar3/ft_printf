@@ -6,19 +6,20 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:04:54 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/18 13:38:49 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2023/12/19 19:29:18 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	write_hexamay(int n, int count, char *s)
+static int	write_hexamay(unsigned int n, int count, char *s)
 {
 	int	c;
 
 	if (n < 0)
 	{
-		write (1, "-", 1);
+		if (write (1, "-", 1) < 0)
+			return (-1);
 		n = -n;
 		count++;
 	}
@@ -27,7 +28,8 @@ static int	write_hexamay(int n, int count, char *s)
 	else
 		count++;
 	c = (n % 16);
-	write (1, &s[c], 1);
+	if (write (1, &s[c], 1) < 0)
+		return (-1);
 	return (count);
 }
 
@@ -38,18 +40,12 @@ int	puthexa_may_c(int n)
 
 	count = 0;
 	s = "0123456789ABCDEF";
-	if (n == -2147483648)
-	{
-		write (1, "-80000000", 9);
-		return (9);
-	}
-	else
-		count = write_hexamay(n, count, s);
+	count = write_hexamay(n, count, s);
 	return (count);
 }
 /* int	main()
 {
 	//printf("%x\n", -1);
-	printf("\n%d", puthexa_may_c(21474836));
+	printf("\n%i", puthexa_may_c(-124));
 	return (0);
 } */

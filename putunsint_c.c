@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:14:22 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/18 18:43:25 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:51:05 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	putunsint_c(unsigned int n)
 	if (n > 9)
 		count += putunsint_c(n / 10);
 	c = (n % 10) + '0';
-	write(1, &c, 1);
+	if (write(1, &c, 1) < 0)
+		return (-1);
 	return (count);
 }
 

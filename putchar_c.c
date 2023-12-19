@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 22:10:19 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/15 23:19:49 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2023/12/19 19:18:07 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	putchar_c(char c)
 {
-	write (1, &c, sizeof(char));
+	if (write (1, &c, 1) < 0)
+		return (-1);
 	return (1);
 }

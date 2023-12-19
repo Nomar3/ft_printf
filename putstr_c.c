@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 22:17:13 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/18 22:49:05 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:02:13 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,16 @@ int	putstr_c(char *s)
 	int	i;
 
 	i = 0;
+	if (!s)
+	{
+		if (write(1, "(null)", 6) < 0)
+			return (-1);
+		return (6);
+	}
 	while (*s)
 	{
-		write(1, s, 1);
+		if (write(1, s, 1) < 0)
+			return (-1);
 		s++;
 		i++;
 	}
