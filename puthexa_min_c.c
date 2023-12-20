@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 20:36:21 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/19 19:30:21 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:35:11 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ static int	write_hexamin(unsigned int n, int count, char *s)
 		count++;
 	}
 	if (n > 15)
+	{
 		count = write_hexamin((n / 16), (count + 1), s);
+		if (count < 0)
+			return (-1);
+	}
 	else
 		count++;
 	c = (n % 16);

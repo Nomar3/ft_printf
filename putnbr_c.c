@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:18:30 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/19 20:13:53 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:50:14 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ static int	write_nbr(int n, int count)
 		count++;
 	}
 	if (n > 9)
+	{
 		count = write_nbr((n / 10), ++count);
+		if (count < 0)
+			return (-1);
+	}
 	c = (n % 10) + '0';
 	if (write (1, &c, 1) < 0)
 		return (-1);

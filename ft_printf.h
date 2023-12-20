@@ -27,7 +27,7 @@ int		putstr_c(char *s);
 int		putnbr_c(int n);
 int		puthexa_min_c(int n);
 int		puthexa_may_c(int n);
-int		putunsint_c(unsigned int n);
+int		putunsint_c(unsigned int n, int count);
 int		putptr_c(unsigned long ptr);
 
 #endif
