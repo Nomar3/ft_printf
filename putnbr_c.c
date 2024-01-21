@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:18:30 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/20 15:50:14 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:10:43 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,3 @@ int	putnbr_c(int n)
 		count = write_nbr(n, count);
 	return (count);
 }
-/*int	main()
-{
-	printf("\n%i", putnbr_c(-1));
-	return (0);
-}*/

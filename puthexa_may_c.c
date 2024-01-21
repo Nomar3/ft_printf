@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:04:54 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/20 15:32:48 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:10:26 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,3 @@ int	puthexa_may_c(int n)
 	count = write_hexamay(n, 0, s);
 	return (count);
 }
-/* int	main()
-{
-	//printf("%x\n", -1);
-	printf("\n%i", puthexa_may_c(-124));
-	return (0);
-} */

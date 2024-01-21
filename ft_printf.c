@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:08:08 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/20 15:57:16 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:24:32 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 
 int	format_print(char s, va_list args)
 {
+	int	count;
+
+	count = 0;
 	if (s == 'c')
-		return (putchar_c(va_arg(args, int)));
+		count = putchar_c(va_arg(args, int));
 	else if (s == 's')
-		return (putstr_c(va_arg(args, char *)));
+		count = putstr_c(va_arg(args, char *));
 	else if (s == 'p')
-		return (putptr_c(va_arg(args, unsigned long)));
+		count = putptr_c(va_arg(args, unsigned long));
 	else if (s == 'd' || s == 'i')
-		return (putnbr_c(va_arg(args, int)));
+		count = putnbr_c(va_arg(args, int));
 	else if (s == 'u')
-		return (putunsint_c(va_arg(args, unsigned int), 1));
+		count = putunsint_c(va_arg(args, unsigned int), 1);
 	else if (s == 'x')
-		return (puthexa_min_c(va_arg(args, int)));
+		count = puthexa_min_c(va_arg(args, int));
 	else if (s == 'X')
-		return (puthexa_may_c(va_arg(args, int)));
+		count = puthexa_may_c(va_arg(args, int));
 	else if (s == '%')
-		return (putchar_c('%'));
-	return (0);
+		count = putchar_c('%');
+	return (count);
 }
 
 int	ft_printf(char const *s, ...)
@@ -60,12 +63,3 @@ int	ft_printf(char const *s, ...)
 	va_end(args);
 	return (count);
 }
-
-/* int	main()
-{
-	
-	printf("\n%i", (ft_printf(" %p ", -1)));
-	printf (" %p ", -1);
-	return 0;
-}
- */

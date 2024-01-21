@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 20:36:21 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/20 15:35:11 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:10:37 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,3 @@ int	puthexa_min_c(int n)
 	count = write_hexamin(n, count, s);
 	return (count);
 }
-/* int	main()
-{
-	//printf("%x\n", -1);
-	printf("\n%d", puthexa_min_c(21474836));
-	return (0);
-}
- */

@@ -6,7 +6,7 @@
 /*   By: rmarin-j <rmarin-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:14:22 by rmarin-j          #+#    #+#             */
-/*   Updated: 2023/12/20 15:57:46 by rmarin-j         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:10:55 by rmarin-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,3 @@ int	putunsint_c(unsigned int n, int count)
 		return (-1);
 	return (count);
 }
-
-/* int	main()
-{
-	void *p;
-
-	//printf("\n%i", putunsint_c(-12345));
-	printf ("%p", p);
-	return (0);
-} */
